@@ -10,7 +10,7 @@ app_file: space.py
 ---
 
 # `gradio_rag_sources`
-<img alt="Static Badge" src="https://img.shields.io/badge/version%20-%200.1.0%20-%20orange"> <a href="https://github.com/ncassereau-idris/gradio_rag_sources/issues" target="_blank"><img alt="Static Badge" src="https://img.shields.io/badge/Issues-white?logo=github&logoColor=black"></a> 
+<a href="https://pypi.org/project/gradio_rag_sources/" target="_blank"><img alt="PyPI - Version" src="https://img.shields.io/pypi/v/gradio_rag_sources"></a> <a href="https://github.com/ncassereau-idris/gradio_rag_sources/issues" target="_blank"><img alt="Static Badge" src="https://img.shields.io/badge/Issues-white?logo=github&logoColor=black"></a> 
 
 A Gradio custom component to display RAG sources
 

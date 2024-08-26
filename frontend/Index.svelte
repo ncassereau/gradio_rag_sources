@@ -1,7 +1,7 @@
 <script lang="ts">
 
 	import type { Gradio } from "@gradio/utils";
-	import { Block } from "@gradio/atoms";
+	import { Block, BlockTitle } from "@gradio/atoms";
 	import { StatusTracker } from "@gradio/statustracker";
 	import type { LoadingStatus } from "@gradio/statustracker";
 
@@ -9,6 +9,8 @@
 
 	export let elem_id = "";
 	export let elem_classes: string[] = [];
+	export let label = "RAG Sources";
+	export let show_label = true;
 	export let visible = true;
 	export let value = undefined;
 	export let container = true;
@@ -30,7 +32,11 @@
 			}
 			return (key_a < key_b) === (order === "asc") ? -1 : 1;
 		}
-		sorted_sources = value.sort(compare);
+		if (value === undefined) {
+			sorted_sources = [];
+		} else {
+			sorted_sources = value.sort(compare);
+		}
 	}
 
 	$: value, sort("rerankScore", "desc");
@@ -47,8 +53,10 @@
 		/>
 	{/if}
 
+	<BlockTitle {show_label} info={undefined}>{label}</BlockTitle>
+
 	{#if value === undefined}
-		<p>RAG Sources</p>
+		<span></span>
 	{:else if value.length === 0}
 		<p style="color:red;">No RAG Source found</p>
 	{:else}
@@ -123,7 +131,9 @@
 
 .rag-table {
     border-collapse: collapse;
-    margin: 25px 0;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+  	overflow: hidden;
     font-size: 0.9em;
     font-family: sans-serif;
     min-width: 400px;
