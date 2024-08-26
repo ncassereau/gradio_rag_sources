@@ -1,6 +1,6 @@
 <script lang="ts">
-    export let width = '16px';
     export let height = '16px';
+    export let width = '16px';
     export let direction: string = "asc";
 </script>
 
@@ -17,7 +17,7 @@
     role="button"
     tabindex="0"
 >
-    <polygon points="50 15, 100 80, 0 80" />
+    <polygon points="50 0, 100 100, 0 100" />
 </svg>
 
 
@@ -35,7 +35,10 @@
 }
 
 .svg-arrow:hover {
-    fill: magenta;
     cursor: pointer;
+}
+
+.svg-arrow:hover, .svg-arrow.active {
+    fill: magenta;
 }
 </style>

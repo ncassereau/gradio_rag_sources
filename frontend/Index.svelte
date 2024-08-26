@@ -22,6 +22,7 @@
 	}>;
 
 	let sorted_sources = undefined;
+	let sorted_by = undefined;
 
 	function sort(keycolumn: string, order: string): void {
 		function compare(a, b) {
@@ -36,6 +37,7 @@
 			sorted_sources = [];
 		} else {
 			sorted_sources = value.sort(compare);
+			sorted_by = keycolumn + order;
 		}
 	}
 
@@ -67,13 +69,19 @@
 					<th>
 						<div style="display: flex; justify-content: right;">
 							Retrieval Score
-							<span style="margin-left: 5px;">
+							<span class="arrow-grp">
 								<Arrow
 									direction="asc"
+									height=10
+									width=10
+									class={sorted_by === "retrievalScoreasc" ? 'active' : ''}
 									on:click={() => sort("retrievalScore", "asc")}
 								/>
 								<Arrow 
-									direction="desc" 
+									direction="desc"
+									height=10
+									width=10
+									class={sorted_by === "retrievalScoredesc" ? 'active' : ''}
 									on:click={() => sort("retrievalScore", "desc")}
 								/>
 							</span>
@@ -82,13 +90,19 @@
 					<th>
 						<div style="display: flex; justify-content: right;">
 							Rerank Score
-							<span style="margin-left: 5px;">
+							<span class="arrow-grp">
 								<Arrow
 									direction="asc"
+									height=10
+									width=10
+									class={sorted_by === "rerankScoreasc" ? 'active' : ''}
 									on:click={() => sort("rerankScore", "asc")}
 								/>
 								<Arrow 
-									direction="desc" 
+									direction="desc"
+									height=10
+									width=10
+									class={sorted_by === "rerankScoredesc" ? 'active' : ''}
 									on:click={() => sort("rerankScore", "desc")}
 								/>
 							</span>
@@ -131,8 +145,8 @@
 
 .rag-table {
     border-collapse: collapse;
-    border-top-left-radius: 1em;
-    border-top-right-radius: 1em;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
   	overflow: hidden;
     font-size: 0.9em;
     font-family: sans-serif;
@@ -181,5 +195,11 @@
 }
 .rag-href svg:hover {
 	stroke-width: 6px;
+}
+
+.arrow-grp {
+	display: flex;
+	align-items: center;
+	margin-left: 5px;
 }
 </style>
