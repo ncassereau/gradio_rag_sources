@@ -152,7 +152,7 @@
 }
 
 .rag-table tbody tr:hover {
-    background-color: #0004ff;
+    background-color: #3e41ff;
 	transition-property: background-color;
 	transition-duration: 0.25s;
 	transition-timing-function: ease-in-out;
