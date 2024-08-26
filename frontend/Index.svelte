@@ -12,7 +12,7 @@
 	export let label = "RAG Sources";
 	export let show_label = true;
 	export let visible = true;
-	export let value = undefined;
+	export let value = [];
 	export let container = true;
 	export let scale: number | null = null;
 	export let min_width: number | undefined = undefined;
@@ -33,7 +33,7 @@
 			}
 			return (key_a < key_b) === (order === "asc") ? -1 : 1;
 		}
-		if (value === undefined) {
+		if (value.length === 0) {
 			sorted_sources = [];
 		} else {
 			sorted_sources = value.sort(compare);
@@ -57,11 +57,7 @@
 
 	<BlockTitle {show_label} info={undefined}>{label}</BlockTitle>
 
-	{#if value === undefined}
-		<span></span>
-	{:else if value.length === 0}
-		<p style="color:red;">No RAG Source found</p>
-	{:else}
+	{#if value.length > 0}
 		<table class="rag-table">
 			<thead>
 				<tr>

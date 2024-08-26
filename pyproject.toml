@@ -8,7 +8,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "gradio_rag_sources"
-version = "0.1.1"
+version = "0.1.2"
 description = "A Gradio custom component to display RAG sources"
 readme = "README.md"
 license = "MIT"
