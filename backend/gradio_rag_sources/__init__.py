@@ -1,4 +1,4 @@
+from .ragsources import RagSourcesTable, _RagSource
 
-from .ragsources import RagSources
 
-__all__ = ['RagSources']
+__all__ = ["RagSourcesTable", "_RagSource"]

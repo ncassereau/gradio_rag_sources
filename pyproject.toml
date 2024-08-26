@@ -8,12 +8,12 @@ build-backend = "hatchling.build"
 
 [project]
 name = "gradio_rag_sources"
-version = "0.0.1"
+version = "0.1.0"
 description = "A Gradio custom component to display RAG sources"
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.8"
-authors = [{ name = "YOUR NAME", email = "YOUREMAIL@domain.com" }]
+authors = [{ name = "Nathan Cassereau", email = "nathan@cassereau.fr" }]
 keywords = ["gradio-custom-component", "gradio-template-Fallback"]
 # Add dependencies here
 dependencies = ["gradio>=4.0,<5.0"]
@@ -37,12 +37,22 @@ classifiers = [
 # This will make it easy for people to find your deployed demo or source code when they
 # encounter your project in the wild.
 
-# [project.urls]
-# repository = "your github repository"
+[project.urls]
+repository = "https://github.com/ncassereau-idris/gradio_rag_sources"
 # space = "your space url"
 
 [project.optional-dependencies]
 dev = ["build", "twine"]
+
+[tool.black]
+line-length = 88
+target-version = ["py312"]
+
+[tool.isort]
+profile = "black"
+lines_after_imports = 2
+skip_gitignore = true
+atomic = true
 
 [tool.hatch.build]
 artifacts = ["/backend/gradio_rag_sources/templates", "*.pyi"]
