@@ -16,7 +16,7 @@ requires-python = ">=3.8"
 authors = [{ name = "Nathan Cassereau", email = "nathan@cassereau.fr" }]
 keywords = ["gradio-custom-component", "gradio-template-Fallback"]
 # Add dependencies here
-dependencies = ["gradio>=4.0,<5.0"]
+dependencies = ["gradio>=4.0"]
 classifiers = [
   'Development Status :: 3 - Alpha',
   'Operating System :: OS Independent',
@@ -26,6 +26,8 @@ classifiers = [
   'Programming Language :: Python :: 3.9',
   'Programming Language :: Python :: 3.10',
   'Programming Language :: Python :: 3.11',
+  'Programming Language :: Python :: 3.12',
+  'Programming Language :: Python :: 3.13',
   'Topic :: Scientific/Engineering',
   'Topic :: Scientific/Engineering :: Artificial Intelligence',
   'Topic :: Scientific/Engineering :: Visualization',
@@ -38,7 +40,7 @@ classifiers = [
 # encounter your project in the wild.
 
 [project.urls]
-repository = "https://github.com/ncassereau-idris/gradio_rag_sources"
+repository = "https://github.com/ncassereau/gradio_rag_sources"
 # space = "your space url"
 
 [project.optional-dependencies]
